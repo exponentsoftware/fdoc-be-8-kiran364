@@ -4,7 +4,7 @@ var router = require("express").Router();
 // Create a new user
 router.post("/", user.create);
 
-// router.get("/", user.findAll);
+router.get("/", user.findAll);
 
 router.delete("/:id", user.delete);
 

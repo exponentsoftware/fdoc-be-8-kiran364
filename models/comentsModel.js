@@ -7,8 +7,10 @@ module.exports = (sequelize, Sequelize) => {
         },
         text: {
             type: Sequelize.STRING
-        } 
+        },
+        username: {
+            type: Sequelize.STRING
+        }
     });
-  
     return Coments;
 };

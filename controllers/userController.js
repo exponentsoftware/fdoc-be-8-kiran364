@@ -2,6 +2,7 @@ const { user, todo } = require("../models");
 const db = require("../models");
 const User = db.user;
 const Todo = db.todo;
+const Coments = db.coments;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new user
@@ -102,11 +103,13 @@ exports.getTodos = async (req, res) => {
         if(data){
             const todos = await User.findAll({
                 attributes:['username', 'email', 'phone'],
-                include:[{
-                    model: Todo,
-                    as:'todoDetails',
-                    attributes:['todoTital', 'status']
-                }],
+                include:[
+                    {
+                        model: Todo,
+                        as:'todoDetails',
+                        attributes:['todoTital', 'status']
+                    }
+                ],
                 where:{id:data.id}
             })
             res.status(200).json(todos);
