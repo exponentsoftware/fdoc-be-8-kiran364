@@ -13,9 +13,11 @@ db.sequelize.sync({force: false});
 const todoRoutes = require("./routes/todo.routes");
 const userRoutes = require("./routes/user.routes");
 const comentRoutes = require("./routes/coment.routes");
+const tagRoutes = require("./routes/tag.routes");
 app.use("/todos", todoRoutes);
 app.use("/users", userRoutes);
 app.use("/coment", comentRoutes);
+app.use("/tag", tagRoutes);
 
 
 
